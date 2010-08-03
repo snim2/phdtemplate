@@ -154,6 +154,22 @@ The output should look something like this:
     
     $
 
+### TAGS files
+
+If you use Emacs, you will know that TAGS files contain information
+about variables and other names in your programs. TAGS files help you
+to quickly navigate around your code or documents -- you can read more
+about this on the Emacs wiki:
+[http://www.emacswiki.org/emacs/EmacsTags](http://www.emacswiki.org/emacs/EmacsTags)
+
+To create a TAGS file for use with the Emacs editor, use the
+following:
+
+    $ make tags
+
+If you use VI or VIM and want to create a TAGS file with ctags, just
+edit the `Makefile` to use the ctags command.
+
 
 ## Hints and tips
 
@@ -177,7 +193,7 @@ The output should look something like this:
     word processor users are quite happy to waste their time in this
     way.  
   * Use services like [http://www.bibsonomy.org/](http://www.bibsonomy.org/)
-    to find BibTeX versions of references and save generating them 
+    to find BibeX versions of references and save generating them 
     yourself.
 
 ---------------------------------------
