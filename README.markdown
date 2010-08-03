@@ -10,7 +10,6 @@ web site, here: http://www.cs.mun.ca/~donald/metathesis/
 The latest version of _this_ template can be found here:
 http://github.com/snim2/phdtemplate
 
----------------------------------------
 
 ## Contents of this meta-thesis
 
@@ -59,7 +58,6 @@ http://github.com/snim2/phdtemplate
 
 All other files are automatically generated.
 
----------------------------------------
 
 ## Requirements and installation
 
@@ -91,7 +89,6 @@ The most common way to get a LaTeX distribution for Windows is to use
 the MikTeX packages: http://www.miktex.org/ A guide to installing
 MikTeX can be found here: http://www3.hi.is/~tpr/latex/index.html
 
----------------------------------------
 
 ## Usage
 
@@ -155,7 +152,6 @@ The output should look something like this:
     
     $
 
----------------------------------------
 
 ## Hints and tips
 
