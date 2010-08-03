@@ -1,0 +1,48 @@
+\documentclass[12pt,a4paper,twoside,openright]{report}
+\usepackage{thesis}
+
+\usepackage{url}
+\usepackage{verbatim}
+
+%%% Add any other packages you need to use here.
+
+% Tango imports the listings package and defines a style for syntax
+% highlighting. We also need to tell listings which programming
+% languages to load.
+\include{tango}
+\lstloadlanguages{Python,[LaTeX]TeX}
+
+\begin{document}
+\pagenumbering{roman}\setcounter{page}{1}
+\pagestyle{plain}
+
+% Thesis title, author and name.
+\thesistitle{Metathesis: A \LaTeX{} Style for University of Wolverhampton PhD Theses} {Your Name} {2010}
+
+% Thesis abstract.
+\include{abstract}
+
+% Acknowledgements.
+\include{ack}
+
+% Automatically generated tables.
+\include{contents}
+\include{tables}
+\include{figures}
+\include{listings}
+
+\pagenumbering{arabic}\setcounter{page}{1}
+\pagestyle{fancy}
+
+% Your own thesis chapters go here.
+\include{chapters/introduction}
+\include{chapters/example}
+
+% Bibliography.
+\include{bib}
+
+% Appendix.
+\appendix
+\include{chapters/app-example}
+
+\end{document}

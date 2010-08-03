@@ -1,0 +1,272 @@
+%
+% LaTeX style for University of Wolverhampton PhD theses.
+%
+% Based on a similar piece of work by Donald Craig at Memorial
+% University, Newfoundland. You can find Donald's original work on his
+% web site, here: http://www.cs.mun.ca/~donald/metathesis/
+%
+% (c) Sarah Mount, 2009.
+%
+
+\usepackage{graphicx}
+\usepackage{latexsym}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\fancyhead{}
+
+\fancyhead[CO]{\leftmark}
+\fancyhead[CE]{\rightmark}
+\fancyfoot[CE,CO]{\thepage}
+
+\floatsep = .29in
+\textfloatsep = \floatsep
+\intextsep = \floatsep
+
+\bibliographystyle{unsrt}
+
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+
+% Almost everything is double spaced.
+\newcommand{\spacing}{1.8}
+\renewcommand{\baselinestretch}{\spacing}
+
+%
+% Footnotes are to be single spaced.
+%
+\newcommand{\wlvfootnote}[1]{%
+	\renewcommand{\baselinestretch}{1.0}%
+	\footnote{#1}%
+	\renewcommand{\baselinestretch}{\spacing}%
+}
+
+%
+% Style for Chapter headings.
+%
+\renewcommand{\@makechapterhead}[1]{%
+  \renewcommand{\baselinestretch}{1.0}%
+  \vspace*{5\p@}%
+  {\parindent \z@ \raggedright \normalfont
+    \ifnum \c@secnumdepth >\m@ne
+        \Large \scshape \@chapapp\space \thechapter % Chapter number
+        \par\nobreak
+        \vskip 20\p@
+    \fi
+    \hrule                                        % horizontal line
+    \vspace{20pt}%                                % add vertical space
+    \interlinepenalty\@M
+    \Large \scshape #1\par                        % chapter title
+    \vspace{10pt}%                                % add vertical space
+    \hrule                                        % horizontal rule
+    \nobreak
+    \vskip 40\p@
+	\renewcommand{\baselinestretch}{\spacing}%
+  }}
+
+%
+% Style for a \chapter*{} heading.
+%
+\renewcommand{\@makeschapterhead}[1]{%
+  \vspace*{5\p@}%
+  {\parindent \z@ \raggedright
+    \normalfont
+    \hrule                                        % horizontal line
+    \vspace{10pt}%                                % add vertical space
+    \interlinepenalty\@M
+    \Large\scshape #1\par                         % chapter title
+    \vspace{10pt}%                                % add vertical space
+    \hrule                                        % horizontal line
+    \nobreak
+    \vskip 40\p@
+  }}
+
+
+% Lengthy quotes must also be single spaced.
+% We provide a parameter for the citation label too.
+\newcommand{\wlvquote}[2]{%
+	\renewcommand{\baselinestretch}{1.0}%
+	\normalsize
+	\begin{quote}{``\textsl{#1}''~\cite{#2}}\end{quote}
+	\renewcommand{\baselinestretch}{\spacing}%
+	\normalsize
+}
+% Same, with no citation.
+\newcommand{\wlvbarequote}[1]{%
+	\renewcommand{\baselinestretch}{1.0}%
+	\normalsize
+	\begin{quote}{``\textsl{#1}''~}\end{quote}
+	\renewcommand{\baselinestretch}{\spacing}%
+	\normalsize
+}
+
+% Command for creating the thesis title page.
+% For usage example, see thesis.tex.
+\newcommand{\thesistitle}[3]{%
+
+\thispagestyle{empty}
+\begin{center}
+
+\renewcommand{\baselinestretch}{1.0}%
+
+\hrule 
+\vspace{0.5cm}
+{\scshape\Large #1}
+\vspace{0.5cm}
+\hrule
+\renewcommand{\baselinestretch}{\spacing}%
+
+\vspace{1.0cm}
+
+%\copyright{} 
+{\large\scshape #2}
+
+\vspace{\fill}
+
+\centering{
+  A thesis submitted in partial fulfilment of the requirements of the
+  University of Wolverhampton for the degree of Doctor of Philosophy
+}
+
+\vspace{\fill}
+
+#3 \\
+
+\end{center}
+
+\vspace{\fill}
+
+This work or any part thereof has not previously been presented in any
+form to the University or to any other body whether for the purposes
+of as- sessment, publication or for any other purpose (unless
+otherwise indicated).  Save for any express acknowledgements,
+references and/or bibliographies cited in the work, I confirm that the
+intellectual content of the work is the result of my own efforts and
+of no other person.
+
+The right of #2 to be identified as author of this work is
+asserted in accordance with ss.77 and 78 of the Copyright, Designs and
+Patents Act 1988. At this date copyright is owned by the author.
+
+\vspace{\fill}
+
+Signature: . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+
+Date: . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+}
+
+%
+% The \wlvepsfig command is used to insert a new EPS figure 
+% into our document.  Usage is:
+%
+%	\wlvepsfig[scale]{filename}{caption}
+%
+% Note:
+%	- scale is optional (defaults to 1.0)
+%	- Assumes that the EPS file is in the 'figures' directory.
+% 	- 'filename' should not include the filename extension.
+%	- 'filename' also serves as the label for the figure.
+%	- Ideally, we'd want to create a \newenvironment to do this
+%	  but because the caption must appear below the figure, this
+%	  doesn't appear to be possible.
+%
+\newcommand{\wlvepsfig}[3][1.0]{%t
+	\begin{figure}[!Hhtbp]
+	\centering
+	\vspace{2mm}
+	\scalebox{#1}{\includegraphics{figures/#2.eps}}
+	\caption{#3}
+	\label{fig:#2}
+	\end{figure}
+}
+
+
+%
+% The \wlvtab command is used to insert a new table into our document.
+% Usage is:
+%
+%	\wlvtab{table_format}{label}{caption}{table_contents}x
+%
+% Note that we could have created a \newenvironment, but opted for
+% a \newcommand so as to be consistent with the \wlvepsfig command.
+%
+\newcommand{\wlvtab}[4]{%
+	\begin{table}[!htbp]
+	\centering
+	\vspace{2mm}
+	\begin{tabular}{#1}
+	#4
+	\end{tabular}
+	\caption{\label{tab:#2}#3}
+	\end{table}
+}
+
+%
+% The \wlveqn command is used to add an equation to the thesis.
+% Usage is 
+%
+%	\wlveqn{label}{equation_body}
+%
+\newcommand{\wlveqn}[2]{%
+	\begin{equation}
+	\centering
+	\label{eqn:#1}
+	#2
+	\end{equation}
+}
+
+
+%
+% Typeset a thesis statement.
+% Usage:
+%
+%  \wlvthesis{fff}{The thesis of this work is Foo is better than Bar.}
+%
+%  blah blah thesis statement on Page \pageref{fff} blah blah
+%
+\newcommand{\wlvthesis}[2]{%
+\vspace{1cm}
+\hrule{}
+\vspace{1em}
+\label{#1}
+\renewcommand{\baselinestretch}{1.0}\normalsize
+\noindent \bfseries { #2 }
+\vspace{1em}
+\hrule{}
+\vspace{1cm}
+% Now reset everything...
+\mdseries
+\renewcommand{\baselinestretch}{\spacing}\normalsize
+}
+
+%
+% For theorems and corollaries.
+%
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[chapter]
+\theoremstyle{definition}
+\newtheorem{case}{Case}
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}[chapter]
+\theoremstyle{definition}
+\newtheorem{lemma}{Lemma}[chapter]
+
+\newcommand{\eqdef}{\stackrel{\mbox{\upshape\tiny def}}{=}}
+
+\newcommand{\note}[1]{[META: {\it #1}]}
+
+%
+% Compress the space taken up by lists. 
+% Use this command after a list is openned.
+% Usage:
+%     \begin{itemize}\compresslist{}
+%       \item ...
+%     \end{itemize}
+\newcommand{\compresslist}{%
+\setlength{\itemsep}{1pt}%
+\setlength{\parskip}{0pt}%
+\setlength{\parsep}{0pt}%
+}

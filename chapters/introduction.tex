@@ -1,0 +1,266 @@
+\chapter{\label{cha:introduction}Introduction}
+
+
+\section{Basics}
+
+\subsection{\label{sec:chapters}Chapters and sections}
+
+Place each of your chapters in a separate file in the \verb!chapters/!
+directory and make sure you add them to both the \verb!Makefile! and
+\verb!thesis.tex!.
+
+It is a good idea to add a sensible label to every chapter and
+significant sections, so that you can easily cross-reference them
+later. For example, this is section \ref{sec:chapters} in chapter
+\ref{cha:introduction} and the next chapter will start on page
+\pageref{cha:example}.
+
+Also note that each appendix of your thesis should be typeset like an
+ordinary chapter.
+
+\subsection{Notes}
+
+\note{A ``note'' can be written with the \texttt{note}
+  directive. Notes allow you to write meta-comments about your work
+  while you are drafting your thesis. Make sure you take them all out
+  before submitting!}
+
+\subsection{Citations}
+
+Use \verb!cite! to enter a citation into the main text of your thesis,
+e.g.: \cite{Roscoe+97}. You can list a number of citations at once, by
+separating the references inside the \verb!cite! directive with
+commas, like this: \cite{Geurts90,Martin96,Welch+99}. Do \emph{not}
+place spaces inside a \verb!cite!ation. You should place your BibTeX
+references in files inside the \verb!refs/! directory and add the file
+names to the file \verb!bib.tex!. A list of references will be
+automatically generated and placed after the main chapters of your
+thesis, just before any appendices.
+
+
+\subsection{Lists} 
+
+\LaTeX has three types of list: itemized lists, enumerated lists and
+description lists. Because most of this thesis template is
+double-spaced, in order to make lists readable, you should use the
+\verb!compresslist! directive after each \verb!being{listtype}!
+statement. 
+
+\subsubsection{Itemized lists}
+
+\begin{itemize}\compresslist{}
+\item foo
+\item bar
+\end{itemize}
+
+\subsubsection{Enumerated lists}
+
+\begin{enumerate}\compresslist{}
+\item foo
+\item bar
+\end{enumerate}
+
+\subsubsection{Description lists}
+
+\begin{description}\compresslist{}
+\item [foo] bar
+\item [baz] arg
+\end{description}
+
+\subsection{Quotations}
+
+This template provides three ways to typeset quotations and similar
+content: footnotes\wlvfootnote{Example footnote.}, ordinary quotes,
+with a citation, and ``bare'' quotes, without a citation. Ordinary
+quotations are typeset with the \verb!wlvquote! directive and look
+like this:
+
+\wlvquote{Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+  sed do eiusmod tempor incididunt ut labore et dolore magna
+  aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+  laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+  dolor in reprehenderit in voluptate velit esse cillum dolore eu
+  fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+  proident, sunt in culpa qui officia deserunt mollit anim id est
+  laborum.}{SugiharGupta08}
+
+``Bare'' quotations, without a citation are typeset with
+\verb!wlvbarequote!, and look essentially the same:
+
+\wlvbarequote{Lorem ipsum dolor sit amet, consectetur adipisicing
+  elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+  aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+  laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+  dolor in reprehenderit in voluptate velit esse cillum dolore eu
+  fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+  proident, sunt in culpa qui officia deserunt mollit anim id est
+  laborum.}
+
+
+\subsection{Figures}
+
+\wlvepsfig{mandelbrot}{This is a caption for an encapsulated postscript figure.}
+
+Traditionally, \LaTeX{} documents always imported figures as
+encapsulated postscript (\verb!.eps!) files. You can generate
+encapsulated postscript files from other file types (such as PNG or
+JPEG) with image manipulation tools such as Gimp
+\url{http://www.gimp.org} or command line tools such as ImageMagick
+\url{http://www.imagemagick.org/}. 
+
+You should place your figures in the \verb!figures/! directory and add
+them to \verb!Makefile!.
+
+In this template, use \verb!wlvepsfig! to typeset an encapsulated
+postscript figure. Figures will automatically be added to the list of
+figures at the beginning of the thesis using the caption, which is the
+second argument to \verb!wlvepsfig!.
+
+\subsubsection{Placement}
+
+Figures are placed either where you put them in the document, if this
+is possible, or failing that, at the top or bottom of the current
+page.
+
+\subsubsection{Cross referencing}
+
+Encapsulated postscript figures, such as figure \ref{fig:mandelbrot}
+on page \pageref{fig:mandelbrot} are automatically given labels of the
+form \verb!fig:FILENAME!. This is the argument that you need to pass
+to \verb!ref! or \verb!pageref!.
+
+\subsection{Tables}
+
+Tables, such as \ref{tab:times} can be typeset with the \verb!wlvtab!
+  directive. The second argument is a label which should be passed to
+  \verb!ref! as \verb!tab:LABEL! for cross-referencing, the third
+  argument is the table caption and the fourth is the contents of the
+  table itself. Tables will be automatically added to the list of
+  tables at the start of the thesis.
+
+The first argument to \verb!wlvtab! tells \LaTeX{} how to lay the
+table out on the page. Table \ref{tab:times} was given the directive
+\verb!|l||c|c|! which means ``One column left-justified, two vertical
+bars, one column centered, one vertical bar, one column centered''. If
+you use emacs, you will find \verb!M-x align-regexp! to be very
+helpful in making \LaTeX{} tables readable. 
+
+\wlvtab{l||c|c} {times} {Times tables}  {
+   & $\times{}2$          & $\times{}3$ \tabularnewline
+\hline
+\hline
+1  & 2  & 3 \tabularnewline
+\hline
+2  & 4  & 8 \tabularnewline
+\hline
+3  & 6  & 9 \tabularnewline
+\hline
+4  & 8  & 12 \tabularnewline
+\hline
+5  & 10  & 15 \tabularnewline
+\hline
+6  & 12 & 18 \tabularnewline
+\hline
+7  & 14  & 21 \tabularnewline
+\hline
+8  & 16  & 24 \tabularnewline
+\hline
+9  & 18  & 27 \tabularnewline
+\hline
+10 & 20  & 30 \tabularnewline
+\hline
+}
+
+
+\section{Typesetting mathematics}
+
+\LaTeX{} has built in support for typesetting mathematics, but in a
+longer, more structured document you will want to use specific
+environments. This template provides support for the following:
+\verb!theorem!, \verb!lemma!, \verb!definition!, \verb!case!, which
+can be used as below:
+
+\begin{theorem}
+\label{thm:evens}
+Square roots of even numbers are not rational.
+\end{theorem}
+
+\begin{lemma}
+\label{thm:two}
+The square root of two is not rational.
+\end{lemma}
+
+\subsection{Equations}
+
+Numbered equations can be typeset with the \verb!wlveqn! directive,
+such as equation \ref{eqn:secondlaw} on page
+\pageref{eqn:secondlaw}. The first argument to this should be a label,
+which can be used for cross-referencing in the format
+\verb!eqn:LABEL!. The second argument to \verb!wlveqn! should be the
+equation itself.
+
+\wlveqn{secondlaw}{F=ma}
+
+
+\section{Thesis statement}
+
+
+In the introduction of your thesis you will most likely want to define
+a \emph{thesis statement}, or hypothesis, or similar. You will want to
+refer back to this several times, and particularly in your
+conclusions. This template provides specific support for writing a
+thesis statement, using the \verb!wlvthesis! directive, the first
+argument to which should be a label, the second should be the
+statement itself:
+
+\wlvthesis{thesisstmt}{The thesis of this work is that \LaTeX{} rocks!
+  We justify this statement by\ldots{}}
+
+
+\section{Typesetting software}
+
+There are three ways to typeset code using the \verb!listings!
+  package. You can typeset code \emph{inline}, using the
+  \verb!\lstinline! directive which will result in the following:
+  \lstinline[language=Python]$print('hello world!')$ inline
+  expression.
+
+Alternatively, you can use \verb!lstlisting! in a begin/end block with
+a caption. In which case, you can add a caption which will also appear
+in the list of listings at the beginning of the thesis. You can
+exclude the listing from the list of listings by adding \verb!nolol!
+to the list of directives in the square brackets (look at the file 
+\verb!chapters/introduction.tex! for details):
+
+\begin{lstlisting}[language=Python,label={lst:pythonpi},caption={[Redefining a constant of the Universe in Python]Redefining a constant of the Universe in Python}]
+>>> import math
+>>> math.pi = 4.0
+>>> 2.0 * math.pi ** 2
+32.0
+>>> 
+\end{lstlisting}
+
+
+Lastly, and most useful of all, you can use \verb!lstinputlisting! to
+include code from a separate file on disk. This means that you can
+edit your code without having to manually merge your efforts back into
+the thesis chapters:
+
+\lstinputlisting[language=python,caption={[This caption will appear in the list of listings]This caption will appear under the listing}]{src/hello.py}
+
+To add extra programming languages to listings, edit the
+\verb!lstloadlanguages! directive in the file \verb!thesis.tex!. If
+you want more fine-grained control over the way that listings are
+typeset, including control over syntax highlighting, edit the file
+\verb!tango.tex!
+
+Lastly, it is a good idea to read the listings manual, which you can
+find online here:
+\url{http://mirror.ctan.org/macros/latex/contrib/listings/listings.pdf}
+
+
+%%% The following are used by emacs, and similar:
+
+%%% Local Variables: ***
+%%% TeX-master: "../thesis.tex"  ***
+%%% End: ***
