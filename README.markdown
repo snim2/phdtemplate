@@ -5,7 +5,8 @@ This repository contains a meta-thesis, that is, a LaTeX template for
 typesetting PhD thesis at the University of Wolverhampton. It is
 largely based on a similar piece of work by Donald Craig at Memorial
 University, Newfoundland. You can find Donald's original work on his
-web site, here: http://www.cs.mun.ca/~donald/metathesis/
+web site, here: 
+[http://www.cs.mun.ca/~donald/metathesis/](http://www.cs.mun.ca/~donald/metathesis/)
 
 The latest version of _this_ template can be found here:
 [http://github.com/snim2/phdtemplate](http://github.com/snim2/phdtemplate)
@@ -86,9 +87,9 @@ be useful to you later on, which is nice.
 ### Windows
 
 The most common way to get a LaTeX distribution for Windows is to use
-the MikTeX packages: (http://www.miktex.org/)[http://www.miktex.org/]
+the MikTeX packages: [http://www.miktex.org/](http://www.miktex.org/)
 A guide to installing MikTeX can be found here:
-(http://www3.hi.is/~tpr/latex/index.html)[http://www3.hi.is/~tpr/latex/index.html}
+[http://www3.hi.is/~tpr/latex/index.html](http://www3.hi.is/~tpr/latex/index.html)
 
 
 ## Usage
@@ -161,10 +162,10 @@ The output should look something like this:
     least keep some sort of remote backup. Because you are using
     LaTeX, you will be able to `diff` different versions of your
     thesis (using UNIX `diff` or a graphical tool such as Meld:
-    (http://meld.sourceforge.net/)[http://meld.sourceforge.net/]), 
+    [http://meld.sourceforge.net/](http://meld.sourceforge.net/)), 
     roll-back erroneous changes, and so
     on. If nothing else use a service like 
-    (http://www.dropbox.com)[http://www.dropbox.com] 
+    [http://www.dropbox.com](http://www.dropbox.com)
     or Ubuntu One to keep a backup somewhere.
   * If you are including code listings in your thesis, keep them in a
     separate directory on disk and include them with the listings
@@ -175,7 +176,7 @@ The output should look something like this:
     thing to include as a hint, but you would be amazed at how many
     word processor users are quite happy to waste their time in this
     way.  
-  * Use services like (http://www.bibsonomy.org/)[http://www.bibsonomy.org/] 
+  * Use services like [http://www.bibsonomy.org/](http://www.bibsonomy.org/)
     to find BibTeX versions of references and save generating them 
     yourself.
 
