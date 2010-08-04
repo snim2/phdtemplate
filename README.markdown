@@ -173,6 +173,8 @@ edit the `Makefile` to use the ctags command.
 
 ## Hints and tips
 
+  * Want more LaTeX help? Try
+    [http://tex.stackexchange.com/](http://tex.stackexchange.com/)
   * For goodness sake archive your thesis with a version control
     system (CVS, SVN, Git, Mercurial, Bazaar, ...) or at the very
     least keep some sort of remote backup. Because you are using
