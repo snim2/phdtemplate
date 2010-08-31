@@ -161,26 +161,25 @@ Signature: . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
 Date: . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
 }
 
+
 %
-% The \wlvepsfig command is used to insert a new EPS figure 
+% The \wlvfig command is used to insert a new EPS figure 
 % into our document.  Usage is:
 %
-%	\wlvepsfig[scale]{filename}{caption}
+%	\wlvfig[scale]{filename}{caption}
 %
 % Note:
 %	- scale is optional (defaults to 1.0)
-%	- Assumes that the EPS file is in the 'figures' directory.
+%	- Assumes that the graphics file is in the 'figures' directory.
 % 	- 'filename' should not include the filename extension.
 %	- 'filename' also serves as the label for the figure.
-%	- Ideally, we'd want to create a \newenvironment to do this
-%	  but because the caption must appear below the figure, this
-%	  doesn't appear to be possible.
+%      e.g. \ref{fig:filename} or \pageref{fig:filename}
 %
-\newcommand{\wlvepsfig}[3][1.0]{%t
+\newcommand{\wlvfig}[3][1.0]{%
 	\begin{figure}[!Hhtbp]
 	\centering
 	\vspace{2mm}
-	\scalebox{#1}{\includegraphics{figures/#2.eps}}
+	\scalebox{#1}{\includegraphics{figures/#2}}
 	\caption{#3}
 	\label{fig:#2}
 	\end{figure}
@@ -206,6 +205,7 @@ Date: . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
 	\caption{\label{tab:#2}#3}
 	\end{table}
 }
+
 
 %
 % The \wlveqn command is used to add an equation to the thesis.

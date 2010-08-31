@@ -99,22 +99,32 @@ like this:
 
 \subsection{Figures}
 
-\wlvepsfig{mandelbrot}{This is a caption for an encapsulated postscript figure.}
+\wlvfig[1.0]{mandelbrot}{This is a caption for a PNG figure.}
 
-Traditionally, \LaTeX{} documents always imported figures as
-encapsulated postscript (\verb!.eps!) files. You can generate
-encapsulated postscript files from other file types (such as PNG or
-JPEG) with image manipulation tools such as Gimp
-\url{http://www.gimp.org} or command line tools such as ImageMagick
-\url{http://www.imagemagick.org/}. 
-
-You should place your figures in the \verb!figures/! directory and add
-them to \verb!Makefile!.
-
-In this template, use \verb!wlvepsfig! to typeset an encapsulated
-postscript figure. Figures will automatically be added to the list of
+You can import any type of graphics file (.jpg, .png, etc) into your
+document using the \verb!wlvfig! command. You should place your
+figures in the \verb!figures/! directory and add them to
+\verb!Makefile!. Figures will automatically be added to the list of
 figures at the beginning of the thesis using the caption, which is the
-second argument to \verb!wlvepsfig!.
+second argument to \verb!wlvfig!.
+
+
+Figures, such as figure \ref{fig:mandelbrot} on page
+\pageref{fig:mandelbrot} are automatically given labels of the form
+\verb!fig:FILENAME!. This is the argument that you need to pass to
+\verb!ref! or \verb!pageref!. 
+
+
+Figure \ref{fig:mandelbrot} was inserted with the command:
+\begin{verbatim}
+\wlvfig[1.0]{mandelbrot}{This is a caption for a PNG figure.}
+\end{verbatim}
+
+The corresponding graphics file is \verb!figures/mandelbrot.png! and
+we can refer to the figure with the command
+\verb!\ref{fig:mandelbrot}!. The first argument, \verb!1.0! tells
+\LaTeX{} to scale the figure to $0.1$ times the original size (keeping
+the aspect ratio fixed).
 
 \subsubsection{Placement}
 
@@ -122,13 +132,7 @@ Figures are placed either where you put them in the document, if this
 is possible, or failing that, at the top or bottom of the current
 page.
 
-\subsubsection{Cross referencing}
-
-Encapsulated postscript figures, such as figure \ref{fig:mandelbrot}
-on page \pageref{fig:mandelbrot} are automatically given labels of the
-form \verb!fig:FILENAME!. This is the argument that you need to pass
-to \verb!ref! or \verb!pageref!.
-
+ 
 \subsection{Tables}
 
 Tables, such as \ref{tab:times} can be typeset with the \verb!wlvtab!
