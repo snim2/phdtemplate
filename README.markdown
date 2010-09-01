@@ -62,12 +62,14 @@ All other files are automatically generated.
 
 ## Requirements and installation
 
-As a minimum, you will need a working LaTeX installation, a version of
+As a minimum, you will need a working LaTeX installation, pdfTeX
+(which should come with any working LaTeX installation), a version of
 `make` (such as GNU make), the LaTeX listings package, which is used
 for typesetting software listings
 [http://www.ctan.org/tex-archive/macros/latex/contrib/listings/](http://www.ctan.org/tex-archive/macros/latex/contrib/listings/)
 and BibTeX, for processing references and citations. To use the
-automatic word count facility you will also need `detex` and `wc`.
+automatic word count facility you will also need `detex` and the shell
+command `wc`.
 
 If you have an aversion to using non-WYSIWYG typesetting systems you
 may want to look at LyX: [http://www.lyx.org/](http://www.lyx.org/)
@@ -116,26 +118,22 @@ like this:
 which will only execute the `make` command if `make clean` exits
 successfully. 
 
-### Postscript
-
-If you want to generate a Postscript (.ps) version of your thesis, use
-the following:
-
-    $ make thesis.ps
-
-### PDF
-
-If you want to generate a PDF version of your thesis, use the
-following:
-
-    $ make thesis.pdf
-
 ### Cleaning up (removing generated files)
 
 To "clean" your thesis directory by removing auto-generated files, use
 the following:
 
     $ make clean
+
+If you are using a revision control system, such as RCS, CVS, SVN, Hg,
+Git, Bazaar or similar, then you will want to run commands like:
+
+    $ git status
+
+To tell you which files have been added, modified or deleted, which
+changes remain uncommitted and so on. It is a good idea to run `make
+clean` before doing this, so that you don't accidentally commit
+automatically generated files to your repository.
 
 ### Accurate word counts
 
@@ -195,7 +193,7 @@ edit the `Makefile` to use the ctags command.
     word processor users are quite happy to waste their time in this
     way.  
   * Use services like [http://www.bibsonomy.org/](http://www.bibsonomy.org/)
-    to find BibeX versions of references and save generating them 
+    to find BibTeX versions of references and save generating them 
     yourself.
 
 ---------------------------------------
