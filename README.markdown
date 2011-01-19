@@ -66,7 +66,9 @@ As a minimum, you will need a working LaTeX installation, pdfTeX
 (which should come with any working LaTeX installation), a version of
 `make` (such as GNU make), the LaTeX listings package, which is used
 for typesetting software listings
-[http://www.ctan.org/tex-archive/macros/latex/contrib/listings/](http://www.ctan.org/tex-archive/macros/latex/contrib/listings/)
+[http://www.ctan.org/tex-archive/macros/latex/contrib/listings/](http://www.ctan.org/tex-archive/macros/latex/contrib/listings/),
+the hyperref package for creating links in PDF focuments
+[http://www.ctan.org/tex-archive/macros/latex/contrib/hyperref/](http://www.ctan.org/tex-archive/macros/latex/contrib/hyperref/),
 and BibTeX, for processing references and citations. To use the
 automatic word count facility you will also need `detex` and the shell
 command `wc`.

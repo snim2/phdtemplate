@@ -11,6 +11,7 @@
 \usepackage{graphicx}
 \usepackage{latexsym}
 \usepackage{fancyhdr}
+\usepackage{hyperref}
 \pagestyle{fancy}
 
 \fancyhead{}
@@ -109,6 +110,31 @@
 % Command for creating the thesis title page.
 % For usage example, see thesis.tex.
 \newcommand{\thesistitle}[3]{%
+
+\hypersetup{
+    bookmarks=true,                                      % show bookmarks bar?
+    unicode=false,                                       % non-Latin characters in Acrobat’s bookmarks
+    pdftoolbar=true,                                     % show Acrobat’s toolbar?
+    pdfmenubar=true,                                     % show Acrobat’s menu?
+    pdffitwindow=false,                                  % window fit to page when opened
+    pdfstartview={Fit},                                  % fits the width of the page to the window
+    pdftitle={#1},                                       % title
+    pdfauthor={#2},                                      % author
+    pdfsubject={University of Wolverhampton PhD Thesis}, % subject of the document
+    pdfcreator={#2},                                     % creator of the document
+    pdfproducer={#2},                                    % producer of the document
+                                                         %    pdfkeywords={} {} {}, % list of keywords
+    pdfnewwindow=true,                                   % links in new window
+    colorlinks=true,                                     % false: boxed links; true: colored links
+    linkcolor=DarkScarletRed,                            % color of internal links
+    citecolor=DarkChameleon,                             % color of links to bibliography
+    filecolor=DarkPlum,                                  % color of file links
+    urlcolor=DarkSkyBlue                                 % color of external links
+}
+
+\begin{document}
+\pagenumbering{roman}\setcounter{page}{1}
+\pagestyle{plain}
 
 \thispagestyle{empty}
 \begin{center}

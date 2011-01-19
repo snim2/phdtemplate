@@ -1,0 +1,25 @@
+# Files for git to ignore.
+
+TAGS
+
+# Auto-generated auto-save files.
+*~
+*.bak
+*.aux
+*.log 
+
+# Auto-generated lists and tables.
+*.lof
+*.lol
+*.lot
+*.out
+*.toc
+
+# Auto-generated BibTeX files.
+*.bbl
+*.blg
+
+# Binary and bytecode files.
+*.pyc
+*.bin
+*.pdf
