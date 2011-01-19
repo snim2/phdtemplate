@@ -9,7 +9,7 @@ MV=/bin/mv
 PREFIX=/usr/bin
 LATEX=$(PREFIX)/pdflatex
 BIBTEX=$(PREFIX)/bibtex
-VIEWER=$(PREFIX)/evince
+VIEWER=$(PREFIX)/acroread
 DETEX=$(PREFIX)/detex
 
 # If you use vi replace this with ctags.
