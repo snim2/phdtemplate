@@ -8,6 +8,10 @@
 % (c) Sarah Mount, 2009.
 %
 
+\usepackage[xcdraw,table]{xcolor}
+
+\definecolor{lightgray}{gray}{0.9}
+
 \usepackage{graphicx}
 \usepackage{latexsym}
 \usepackage{fancyhdr}
@@ -227,13 +231,16 @@ Date: . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
 %
 \newcommand{\wlvtab}[4]{%
 	\begin{table}[!htbp]
+      \renewcommand{\baselinestretch}{1.0}%
 	\centering
 	\vspace{2mm}
+    \rowcolors{1}{}{lightgray}
 	\begin{tabular}{#1}
 	#4
 	\end{tabular}
 	\caption{\label{tab:#2}#3}
 	\end{table}
+    \renewcommand{\baselinestretch}{\spacing}%
 }
 
 
