@@ -11,7 +11,7 @@ directory and make sure you add them to both the \verb!Makefile! and
 
 It is a good idea to add a sensible label to every chapter and
 significant sections, so that you can easily cross-reference them
-later. For example, this is section \ref{sec:chapters} in chapter
+later. For example, this is Section~\ref{sec:chapters} in chapter
 \ref{cha:introduction} and the next chapter will start on page
 \pageref{cha:example}.
 
@@ -28,9 +28,9 @@ ordinary chapter.
 \subsection{Citations}
 
 Use \verb!cite! to enter a citation into the main text of your thesis,
-e.g.: \cite{Roscoe+97}. You can list a number of citations at once, by
+e.g.:~\cite{Roscoe+97}. You can list a number of citations at once, by
 separating the references inside the \verb!cite! directive with
-commas, like this: \cite{Geurts90,Martin96,Welch+99}. Do \emph{not}
+commas, like this:~\cite{Geurts90,Martin96,Welch+99}. Do \emph{not}
 place spaces inside a \verb!cite!ation. You should place your BibTeX
 references in files inside the \verb!refs/! directory and add the file
 names to the file \verb!bib.tex!. A list of references will be
@@ -40,7 +40,7 @@ thesis, just before any appendices.
 
 \subsection{Lists} 
 
-\LaTeX has three types of list: itemized lists, enumerated lists and
+\LaTeX{} has three types of list: itemized lists, enumerated lists and
 description lists. Because most of this thesis template is
 double-spaced, in order to make lists readable, you should use the
 \verb!compresslist! directive after each \verb!being{listtype}!
@@ -101,7 +101,7 @@ like this:
 
 \wlvfig[1.0]{mandelbrot}{This is a caption for a PNG figure.}
 
-You can import any type of graphics file (.jpg, .png, etc) into your
+You can import any type of graphics file (jpeg, png, etc.) into your
 document using the \verb!wlvfig! command. You should place your
 figures in the \verb!figures/! directory and add them to
 \verb!Makefile!. Figures will automatically be added to the list of
@@ -109,13 +109,13 @@ figures at the beginning of the thesis using the caption, which is the
 second argument to \verb!wlvfig!.
 
 
-Figures, such as figure \ref{fig:mandelbrot} on page
-\pageref{fig:mandelbrot} are automatically given labels of the form
+Figures, such as figure~\ref{fig:mandelbrot} on 
+page~\pageref{fig:mandelbrot} are automatically given labels of the form
 \verb!fig:FILENAME!. This is the argument that you need to pass to
 \verb!ref! or \verb!pageref!. 
 
 
-Figure \ref{fig:mandelbrot} was inserted with the command:
+Figure~\ref{fig:mandelbrot} was inserted with the command:
 \begin{verbatim}
 \wlvfig[1.0]{mandelbrot}{This is a caption for a PNG figure.}
 \end{verbatim}
@@ -135,24 +135,24 @@ page.
  
 \subsection{Tables}
 
-Tables, such as \ref{tab:times} can be typeset with the \verb!wlvtab!
-  directive. The second argument is a label which should be passed to
-  \verb!ref! as \verb!tab:LABEL! for cross-referencing, the third
-  argument is the table caption and the fourth is the contents of the
-  table itself. Tables will be automatically added to the list of
-  tables at the start of the thesis.
+Tables, such as~\ref{tab:times} can be typeset with the \verb!wlvtab!
+directive. The second argument is a label which should be passed to
+\verb!ref! as \verb!tab:LABEL! for cross-referencing, the third
+argument is the table caption and the fourth is the contents of the
+table itself. Tables will be automatically added to the list of
+tables at the start of the thesis.
 
 The first argument to \verb!wlvtab! tells \LaTeX{} how to lay the
-table out on the page. Table \ref{tab:times} was given the directive
+table out on the page. Table~\ref{tab:times} was given the directive
 \verb!|l||c|c|! which means ``One column left-justified, two vertical
 bars, one column centered, one vertical bar, one column centered''. If
 you use emacs, you will find \verb!M-x align-regexp! to be very
 helpful in making \LaTeX{} tables readable. 
 
 \wlvtab{r|rrrrr} {times} {Table example}  {
-  \hline
+  \toprule
     & 1 & 2 & 3 & 4 & 5 \\
-  \hline
+  \midrule
   1 & 2.36 & 1.08 & -0.49 & -0.82 & -0.65 \\
   2 & -0.68 & -1.13 & -0.42 & -0.72 & 1.51 \\
   3 & -1.00 & 0.02 & -0.54 & 0.31 & 1.28 \\
@@ -163,7 +163,7 @@ helpful in making \LaTeX{} tables readable.
   8 & 0.80 & 0.46 & 1.37 & 1.73 & 1.93 \\
   9 & -0.75 & 0.28 & 0.51 & 0.19 & 0.58 \\
   10 & -1.64 & -0.12 & -1.17 & -0.10 & -0.04 \\
-   \hline
+   \bottomrule
 }
 
 
@@ -188,8 +188,8 @@ The square root of two is not rational.
 \subsection{Equations}
 
 Numbered equations can be typeset with the \verb!wlveqn! directive,
-such as equation \ref{eqn:secondlaw} on page
-\pageref{eqn:secondlaw}. The first argument to this should be a label,
+such as equation~\ref{eqn:secondlaw} on 
+page~\pageref{eqn:secondlaw}. The first argument to this should be a label,
 which can be used for cross-referencing in the format
 \verb!eqn:LABEL!. The second argument to \verb!wlveqn! should be the
 equation itself.
