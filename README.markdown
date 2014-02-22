@@ -86,6 +86,7 @@ command line:
 
     $ sudo apt-get install build-essential
     $ sudo apt-get install tetex*
+    $ sudo apt-get install chktex
 
 In fact, this will also install all sorts of LaTeX packages that might
 be useful to you later on, which is nice.
@@ -121,6 +122,15 @@ like this:
 
 which will only execute the `make` command if `make clean` exits
 successfully. 
+
+### Linting
+
+To check that your LaTeX is valid and conforms to common coding 
+conventions, you can run `make lint` to run the `chktex` checker over
+your LaTeX files:
+
+    $ make lint
+
 
 ### Cleaning up (removing generated files)
 
@@ -203,4 +213,3 @@ edit the `Makefile` to use the ctags command.
 ---------------------------------------
 
 © Sarah Mount, University of Wolverhampton, 2010.
-
