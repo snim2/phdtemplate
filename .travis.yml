@@ -2,6 +2,10 @@ install:
     - yes | sudo apt-add-repository ppa:texlive-backports/ppa
     - sudo apt-get update -qq
     - sudo apt-get install texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended 
+    - sudo apt-get install chktex
 
 script:
     - make
+    - make lint > lint.out
+    # If lint output is non-empty report an error.
+    - test ! -s lint.out

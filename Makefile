@@ -12,6 +12,9 @@ BIBTEX=$(PREFIX)/bibtex
 VIEWER=$(PREFIX)/acroread
 DETEX=$(PREFIX)/detex
 
+LINT=/usr/bin/chktex
+LINT_OPTIONS=-q
+
 # If you use vi replace this with ctags.
 TAGS=$(PREFIX)/etags
 
@@ -49,6 +52,9 @@ $(MAIN).pdf:    $(MAIN).tex $(FIGURES) $(FILES)
 
 view:       $(MAIN).pdf
 	- $(VIEWER) $<
+
+lint:
+	@ $(LINT) $(LINT_OPTIONS) *.tex $(CHAPDIR)/*.tex 2>/dev/null
 
 clean:
 	- $(RM) -f *.aux \
