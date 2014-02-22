@@ -39,7 +39,6 @@ FILES = thesis.tex thesis.sty \
 ###
 
 all:    thesis.pdf
-	$(VIEWER) $<
 
 $(MAIN).pdf:    $(MAIN).tex $(FIGURES) $(FILES)
 	$(LATEX) $*.tex; 
