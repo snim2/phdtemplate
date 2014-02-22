@@ -8,8 +8,8 @@
 % (c) Sarah Mount, 2009.
 %
 
-\usepackage[xcdraw,table]{xcolor}
 
+\usepackage[xcdraw,table]{xcolor}
 \definecolor{lightgray}{gray}{0.9}
 
 \usepackage{graphicx}
@@ -23,6 +23,17 @@
 \fancyhead[CO]{\leftmark}
 \fancyhead[CE]{\rightmark}
 \fancyfoot[CE,CO]{\thepage}
+
+
+%%% Fixing running headers on empty pages
+%%% Patch from: http://www.tex.ac.uk/cgi-bin/texfaq2html?label=reallyblank
+\let\origdoublepage\cleardoublepage
+\newcommand{\clearemptydoublepage}{%
+  \clearpage
+  {\pagestyle{empty}\origdoublepage}%
+}
+\let\cleardoublepage\clearemptydoublepage
+
 
 \floatsep = .29in
 \textfloatsep = \floatsep
@@ -111,14 +122,12 @@
 	\normalsize
 }
 
-% Command for creating the thesis title page.
-% For usage example, see thesis.tex.
-\newcommand{\thesistitle}[3]{%
+\newcommand{\setuphyperref}[2]{%
 \makeatletter
 \let\savedbibitem\bibitem
 \makeatother
-\usepackage{hyperref}
 
+\usepackage{hyperref}
 \hypersetup{
     bookmarks=true,                                      % show bookmarks bar?
     unicode=false,                                       % non-Latin characters in Acrobat’s bookmarks
@@ -131,7 +140,7 @@
     pdfsubject={University of Wolverhampton PhD Thesis}, % subject of the document
     pdfcreator={#2},                                     % creator of the document
     pdfproducer={#2},                                    % producer of the document
-                                                         %    pdfkeywords={} {} {}, % list of keywords
+    pdfkeywords={thesis} {template} {latex},             % list of keywords
     pdfnewwindow=true,                                   % links in new window
     colorlinks=true,                                     % false: boxed links; true: colored links
     linkcolor=DarkScarletRed,                            % color of internal links
@@ -139,8 +148,11 @@
     filecolor=DarkPlum,                                  % color of file links
     urlcolor=DarkSkyBlue                                 % color of external links
 }
+}
 
-\begin{document}
+% Command for creating the thesis title page.
+% For usage example, see thesis.tex.
+\newcommand{\thesistitle}[3]{%
 \pagenumbering{roman}\setcounter{page}{1}
 \pagestyle{plain}
 
@@ -178,7 +190,7 @@
 
 This work or any part thereof has not previously been presented in any
 form to the University or to any other body whether for the purposes
-of as- sessment, publication or for any other purpose (unless
+of assessment, publication or for any other purpose (unless
 otherwise indicated).  Save for any express acknowledgements,
 references and/or bibliographies cited in the work, I confirm that the
 intellectual content of the work is the result of my own efforts and
@@ -296,10 +308,11 @@ Date: . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
 \newtheorem{theorem}{Theorem}[chapter]
 \theoremstyle{definition}
 \newtheorem{lemma}{Lemma}[chapter]
+\theoremstyle{definition}
+\newtheorem{thesis}{Thesis}[chapter]
 
 \newcommand{\eqdef}{\stackrel{\mbox{\upshape\tiny def}}{=}}
 
-\newcommand{\note}[1]{[META: {\it #1}]}
 
 %
 % Compress the space taken up by lists. 

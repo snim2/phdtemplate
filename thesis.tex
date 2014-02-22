@@ -3,6 +3,8 @@
 
 \usepackage{url}
 \usepackage{verbatim}
+\usepackage{booktabs}  % See: http://texdoc.net/texmf-dist/doc/latex/booktabs/booktabs.pdf
+\usepackage{todonotes} % Used for inserting comments inline or in the margins.
 
 %%% Add any other packages you need to use here.
 
@@ -12,13 +14,17 @@
 \include{tango}
 \lstloadlanguages{Python,[LaTeX]TeX}
 
-%
-% DO NOT include a \begin{document} directive, this is included in the
-% STY file.
-%
+%%% Set up the title page of the thesis.
 
+\setuphyperref{Metathesis: A \LaTeX{} Style for University of Wolverhampton PhD Theses} {Your Name}
+
+\begin{document}
+
+%%% \thesistitle ends the preamble.
 % Thesis title, author and name.
 \thesistitle{Metathesis: A \LaTeX{} Style for University of Wolverhampton PhD Theses} {Your Name} {2010}
+
+%%% End of preamble.
 
 % Thesis abstract.
 \include{abstract}
