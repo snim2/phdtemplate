@@ -1,6 +1,8 @@
 
 # PhD Meta-Thesis, University of Wolverhampton.
 
+[![Build Status](https://travis-ci.org/snim2/phdtemplate.png?branch=master)](https://travis-ci.org/snim2/phdtemplate)
+
 This repository contains a meta-thesis, that is, a LaTeX template for
 typesetting PhD thesis at the University of Wolverhampton. It is
 largely based on a similar piece of work by Donald Craig at Memorial
