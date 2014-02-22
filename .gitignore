@@ -6,7 +6,7 @@ TAGS
 *~
 *.bak
 *.aux
-*.log 
+*.log
 
 # Auto-generated lists and tables.
 *.lof
