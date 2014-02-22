@@ -20,7 +20,7 @@ TAGS=$(PREFIX)/etags
 
 .SUFFIXES:      .tex .dvi .eps .ps .pdf
 
-.PHONEY: 	all clean tags view neat wc
+.PHONEY: 	all clean tags lint view neat wc
 
 MAIN = thesis
 
