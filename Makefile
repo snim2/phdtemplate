@@ -41,7 +41,7 @@ FILES = thesis.tex thesis.sty \
 ### DO NOT EDIT BELOW THIS LINE UNLESS YOU REALLY KNOW WHAT YOU'RE DOING!
 ###
 
-all:    thesis.pdf
+all:    $(MAIN).pdf
 
 $(MAIN).pdf:    $(MAIN).tex $(FIGURES) $(FILES)
 	$(LATEX) $*.tex; 
